@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Realizada com Sucesso! - Guia de Registro de Marca</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .success-page {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-light);
+        }
+        
+        .success-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+        
+        .success-icon {
+            margin-bottom: 2.5rem;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .success-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .success-message {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--text-color);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .download-button {
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .back-home {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 5px;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        .back-home::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .back-home:hover {
+            color: var(--accent-color);
+        }
+        
+        .back-home:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <svg class="success-icon" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="38" fill="#28a745"/>
+            <path d="M30,40 L36,46 L50,32" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1 class="success-title">Compra Realizada com Sucesso!</h1>
+        <p class="success-message">Obrigado por adquirir o "Guia Explicativo para Empresários: Como Registrar a Marca da sua Empresa no Brasil". Seu download está pronto!</p>
+        <a href="#" class="cta-button download-button">Baixar Ebook Agora</a>
+        <p>Você também receberá um e-mail com o link para download.</p>
+        <p>Em caso de dúvidas, entre em contato conosco pelo e-mail: <strong>contato@guiaregistromarca.com.br</strong></p>
+        <a href="index.html" class="back-home">Voltar para a página inicial</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Guia de Registro de Marca</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+                <div class="footer-contact">
+                    <p>Contato: contato@guiaregistromarca.com.br</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 Guia de Registro de Marca. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

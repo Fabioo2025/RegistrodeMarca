@@ -3,159 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra Realizada com Sucesso! - Guia de Registro de Marca</title>
+    <title>Compra Realizada com Sucesso! | Guia Prático: Registro de Marca no Brasil</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .success-page {
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: var(--bg-light);
+            padding: 2rem;
             text-align: center;
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-            background: var(--gradient-light);
         }
         
-        .success-page::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .success-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 3rem;
+            max-width: 600px;
             width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
-            z-index: -1;
+            margin: 0 auto;
+            border-top: 8px solid var(--brand-orange);
         }
         
         .success-icon {
-            margin-bottom: 2.5rem;
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
-            animation: pulse 2s infinite;
+            width: 80px;
+            height: 80px;
+            background-color: #d1fae5;
+            color: #065f46;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
         }
         
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
         }
         
         .success-title {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-            animation: fadeInDown 1s ease-out;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--brand-blue-950);
+            margin-bottom: 1rem;
         }
         
         .success-message {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            color: var(--text-color);
-            animation: fadeInUp 1s ease-out 0.3s both;
+            font-size: 1.125rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
         }
         
         .download-button {
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--brand-blue-700);
+            color: var(--text-white);
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
         }
         
-        .back-home {
-            color: var(--primary-color);
+        .download-button:hover {
+            background-color: var(--brand-blue-800);
+            transform: translateY(-3px);
+            color: var(--text-white);
+        }
+        
+        .download-icon {
+            margin-right: 0.5rem;
+        }
+        
+        .back-link {
+            color: var(--brand-blue-700);
             text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            position: relative;
-            padding-bottom: 5px;
-            animation: fadeInUp 1s ease-out 0.9s both;
-        }
-        
-        .back-home::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
+            font-weight: 500;
             transition: var(--transition);
         }
         
-        .back-home:hover {
-            color: var(--accent-color);
-        }
-        
-        .back-home:hover::after {
-            width: 100%;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .back-link:hover {
+            color: var(--brand-blue-500);
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="success-page">
-        <svg class="success-icon" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="38" fill="#28a745"/>
-            <path d="M30,40 L36,46 L50,32" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h1 class="success-title">Compra Realizada com Sucesso!</h1>
-        <p class="success-message">Obrigado por adquirir o "Guia Explicativo para Empresários: Como Registrar a Marca da sua Empresa no Brasil". Seu download está pronto!</p>
-        <a href="#" class="cta-button download-button">Baixar Ebook Agora</a>
-        <p>Você também receberá um e-mail com o link para download.</p>
-        <p>Em caso de dúvidas, entre em contato conosco pelo e-mail: <strong>contato@guiaregistromarca.com.br</strong></p>
-        <a href="index.html" class="back-home">Voltar para a página inicial</a>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Guia de Registro de Marca</h3>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Política de Privacidade</a>
-                </div>
-                <div class="footer-contact">
-                    <p>Contato: contato@guiaregistromarca.com.br</p>
-                </div>
+        <div class="success-card">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2024 Guia de Registro de Marca. Todos os direitos reservados.</p>
-            </div>
+            
+            <h1 class="success-title">Compra Realizada com Sucesso!</h1>
+            
+            <p class="success-message">
+                Obrigado por adquirir o <strong>Guia Prático: Registro de Marca no Brasil</strong>. 
+                Seu acesso foi liberado e você já pode baixar o material completo.
+            </p>
+            
+            <a href="#" class="download-button" id="download-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Baixar E-book Agora
+            </a>
+            
+            <p>
+                Enviamos também um e-mail com o link de acesso para você.<br>
+                <a href="index.html" class="back-link">Voltar para a página inicial</a>
+            </p>
         </div>
-    </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadButton = document.getElementById('download-button');
+            
+            if (downloadButton) {
+                downloadButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // In a real implementation, this would be a link to the actual PDF file
+                    // For demo purposes, show a notification
+                    showNotification('Esta é uma demonstração. Em um ambiente real, o download do e-book seria iniciado.', 'info');
+                });
+            }
+            
+            // Custom notification system
+            function showNotification(message, type = 'success') {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                
+                // Add styles
+                Object.assign(notification.style, {
+                    position: 'fixed',
+                    bottom: '20px',
+                    right: '20px',
+                    padding: '15px 20px',
+                    borderRadius: '8px',
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    zIndex: '9999',
+                    opacity: '0',
+                    transform: 'translateY(20px)',
+                    transition: 'opacity 0.3s ease, transform 0.3s ease',
+                    color: 'white',
+                    maxWidth: '300px'
+                });
+                
+                // Set type-specific styles
+                if (type === 'success') {
+                    notification.style.backgroundColor = '#10b981';
+                } else if (type === 'error') {
+                    notification.style.backgroundColor = '#ef4444';
+                } else if (type === 'info') {
+                    notification.style.backgroundColor = '#3b82f6';
+                }
+                
+                // Set content
+                notification.innerHTML = message;
+                
+                // Add to DOM
+                document.body.appendChild(notification);
+                
+                // Trigger animation
+                setTimeout(() => {
+                    notification.style.opacity = '1';
+                    notification.style.transform = 'translateY(0)';
+                }, 10);
+                
+                // Remove after delay
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    notification.style.transform = 'translateY(20px)';
+                    
+                    // Remove from DOM after animation
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 4000);
+            }
+        });
+    </script>
 </body>
 </html>

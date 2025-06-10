@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Avatar Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f1f5f9;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        h1 {
+            margin-top: 0;
+            color: #082f49;
+        }
+        
+        .avatar-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .avatar:hover {
+            transform: scale(1.1);
+        }
+        
+        .instructions {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f0f9ff;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+        }
+        
+        .instructions h2 {
+            margin-top: 0;
+            color: #0c4a6e;
+        }
+        
+        .instructions ol {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Placeholder Avatar Generator</h1>
+        <p>Click on an avatar to download it or use it as a background image in your CSS.</p>
+        
+        <div class="avatar-container">
+            <div class="avatar" style="background-color: #0ea5e9;" onclick="downloadAvatar(this, 'blue')">AB</div>
+            <div class="avatar" style="background-color: #10b981;" onclick="downloadAvatar(this, 'green')">CD</div>
+            <div class="avatar" style="background-color: #8b5cf6;" onclick="downloadAvatar(this, 'purple')">EF</div>
+            <div class="avatar" style="background-color: #f59e0b;" onclick="downloadAvatar(this, 'yellow')">GH</div>
+            <div class="avatar" style="background-color: #ef4444;" onclick="downloadAvatar(this, 'red')">IJ</div>
+            <div class="avatar" style="background-color: #6b7280;" onclick="downloadAvatar(this, 'gray')">KL</div>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to use in your project:</h2>
+            <ol>
+                <li>Click on an avatar to download it</li>
+                <li>Place the downloaded image in your project's images folder</li>
+                <li>Use it as a fallback in your HTML with the onerror attribute:
+                    <pre><code>&lt;img src="user-avatar.jpg" onerror="this.src='placeholder-avatar.png'"&gt;</code></pre>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="instructions">
+            <h2>CSS Background Alternative:</h2>
+            <p>You can also use a CSS gradient as a placeholder:</p>
+            <pre><code>background: linear-gradient(to bottom right, #0ea5e9, #0c4a6e);</code></pre>
+        </div>
+    </div>
+    
+    <script>
+        function downloadAvatar(element, color) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const size = 200;
+            
+            canvas.width = size;
+            canvas.height = size;
+            
+            // Draw circle background
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+            ctx.fillStyle = element.style.backgroundColor;
+            ctx.fill();
+            
+            // Draw text
+            ctx.font = 'bold 80px Inter, sans-serif';
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(element.innerText, size/2, size/2);
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.download = `avatar-${color}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>

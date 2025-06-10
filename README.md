@@ -16,3 +16,4 @@ Este repositório contém o site para o guia "Como Registrar a Marca da sua Empr
 - Stripe para processamento de pagamentos
 "# RegistroMarca" 
 "# RegistroMarca" 
+"# teste" 

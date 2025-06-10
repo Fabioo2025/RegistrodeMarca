@@ -15,3 +15,4 @@ Este repositório contém o site para o guia "Como Registrar a Marca da sua Empr
 - JavaScript
 - Stripe para processamento de pagamentos
 "# RegistroMarca" 
+"# RegistroMarca" 
